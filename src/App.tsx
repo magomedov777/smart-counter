@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { ChangeEvent, FC, useState } from 'react';
 import './App.css';
+import { Counter } from './Counter';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: React.FC = () => {
+    let [minValue, setMinValue] = useState(0)
+    let [count, setCount] = useState(minValue)
+    let [maxValue, setMaxValue] = useState(0)
+
+    const incHandler = () => setCount(++count);
+
+    const decHandler = () => setCount(--count);
+
+    const resHandler = () => setCount(minValue);
+
+    let setMinValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        setMinValue(parseInt(event.target.value))
+    };
+
+    let setMinValueButtonHandler = () => {
+        setCount(count = minValue)
+    };
+
+    let setMaxValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        setMaxValue(parseInt(event.target.value))
+    };
+
+    let setMaxValueButtonHandler = () => {
+        setMaxValue(maxValue)
+    };
+
+
+    return (
+        <Counter
+            count={count}
+            incHandler={incHandler}
+            decHandler={decHandler}
+            resHandler={resHandler}
+            setMinValueHandler={setMinValueHandler}
+            setMinValueButtonHandler={setMinValueButtonHandler}
+            setMaxValueHandler={setMaxValueHandler}
+            setMaxValueButtonHandler={setMaxValueButtonHandler}
+            maxValue={maxValue}
+            minValue={minValue}
+        />
+    )
 }
 
 export default App;
