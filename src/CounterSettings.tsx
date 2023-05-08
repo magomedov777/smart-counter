@@ -1,26 +1,30 @@
 import React, { ChangeEvent } from 'react';
 import s from './counter.module.css';
 
-type PropsType = {
+type CounterSettingsPropsType = {
     setMinValueHandler: (event: ChangeEvent<HTMLInputElement>) => void
     setMaxValueHandler: (event: ChangeEvent<HTMLInputElement>) => void
     setMinValueButtonHandler: () => void
     setMaxValueButtonHandler: () => void
 }
 
-export const CounterSettings = (props: PropsType) => {
+export const CounterSettings = (props: CounterSettingsPropsType): JSX.Element => {
     return (
         <div>
             <input
                 className={s.inputMinValue}
-                onChange={props.setMinValueHandler} />
+                onChange={props.setMinValueHandler}
+                placeholder={'Enter min value'}
+                />
             <button
                 className={s.minValue}
                 onClick={props.setMinValueButtonHandler}>Min Value
             </button>
             <input
                 className={s.inputMaxValue}
-                onChange={props.setMaxValueHandler} />
+                onChange={props.setMaxValueHandler} 
+                placeholder={'Enter max value'}
+                />
             <button
                 className={s.maxValue}
                 onClick={props.setMaxValueButtonHandler}>Max Value

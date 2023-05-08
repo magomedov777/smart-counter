@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './counter.module.css'
 
-type PropsType = {
+type ButtonPanelPropsType = {
   count: number
   maxValue: number
   minValue: number
@@ -11,7 +11,7 @@ type PropsType = {
 
 }
 
-export const ButtonPanel = (props: PropsType) => {
+export const ButtonPanel = (props: ButtonPanelPropsType): JSX.Element => {
   return (
     <div className={s.buttonPanel}>
       <button className={s.inc} onClick={props.incHandler} disabled={props.count === props.maxValue}>increment</button>

@@ -14,7 +14,7 @@ const App: React.FC = () => {
     const resHandler = () => setCount(minValue);
 
     let setMinValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        setMinValue(parseInt(event.target.value))
+        setMinValue(parseInt(event.currentTarget.value))
     };
 
     let setMinValueButtonHandler = () => {
@@ -22,7 +22,7 @@ const App: React.FC = () => {
     };
 
     let setMaxValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        setMaxValue(parseInt(event.target.value))
+        setMaxValue(parseInt(event.currentTarget.value))
     };
 
     let setMaxValueButtonHandler = () => {

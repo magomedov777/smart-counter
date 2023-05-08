@@ -1,12 +1,12 @@
 import React from 'react';
 import s from './counter.module.css';
 
-type PropsType = {
+type CounterScreenPropsType = {
   count: number
   maxValue: number
 }
 
-export const CounterScreen = (props: PropsType) => {
+export const CounterScreen = (props: CounterScreenPropsType): JSX.Element => {
   return (
     <div>
       <h1 className={s.count}>

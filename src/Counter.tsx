@@ -4,7 +4,7 @@ import { ButtonPanel } from './ButtonPanel';
 import { CounterSettings } from './CounterSettings';
 import s from './counter.module.css';
 
-type PropsType = {
+type CounterPropsType = {
     count: number
     maxValue: number
     minValue: number
@@ -17,11 +17,14 @@ type PropsType = {
     setMaxValueButtonHandler: () => void
 }
 
-export const Counter = (props: PropsType) => {
+export const Counter = (props: CounterPropsType): JSX.Element => {
     return (
         <div className={s.counterBody}>
             <div className={s.mainPanel}>
-                <CounterScreen count={props.count} maxValue={props.maxValue}/>
+                <CounterScreen
+                    count={props.count}
+                    maxValue={props.maxValue}
+                />
                 <ButtonPanel
                     incHandler={props.incHandler}
                     decHandler={props.decHandler}
@@ -29,7 +32,7 @@ export const Counter = (props: PropsType) => {
                     count={props.count}
                     maxValue={props.maxValue}
                     minValue={props.minValue}
-                    />
+                />
             </div>
 
             <div className={s.counterSettingsPanel}>
