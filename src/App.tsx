@@ -5,7 +5,6 @@ import { Counter } from './Counter';
 const App: React.FC = () => {
     let [minValue, setMinValue] = useState(0)
     let [count, setCount] = useState(minValue)
-    let [maxValue, setMaxValue] = useState(0)
 
     const incHandler = () => setCount(++count);
 
