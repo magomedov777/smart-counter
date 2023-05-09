@@ -31,7 +31,6 @@ export const Counter = (props: CounterPropsType): JSX.Element => {
                     resHandler={props.resHandler}
                     count={props.count}
                     maxValue={props.maxValue}
-                    minValue={props.minValue}
                 />
             </div>
 
