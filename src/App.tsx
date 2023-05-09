@@ -9,6 +9,7 @@ const App: React.FC = () => {
 
     const incHandler = () => setCount(++count);
 
+    const decHandler = () => setCount(--count);
 
     const resHandler = () => setCount(minValue);
 
