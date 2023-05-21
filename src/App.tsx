@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import './App.css';
 import { Counter } from './Counter';
 
@@ -6,6 +6,18 @@ const App: React.FC = () => {
     let [minValue, setMinValue] = useState(0)
     let [count, setCount] = useState(minValue)
     let [maxValue, setMaxValue] = useState(0)
+
+    useEffect(() => {
+        let valueAsString = localStorage.getItem("counterValue")
+        if (valueAsString) {
+          let newValue = JSON.parse(valueAsString)
+          setCount(newValue)
+        }
+      }, [])
+    
+      useEffect(() => {
+        localStorage.setItem("counterValue", JSON.stringify(count))
+      }, [count])
 
     const incHandler = () => setCount(++count);
 
