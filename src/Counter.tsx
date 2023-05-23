@@ -22,6 +22,7 @@ export const Counter = (props: CounterPropsType): JSX.Element => {
         <div className={s.counterBody}>
             <div className={s.mainPanel}>
                 <CounterScreen
+                    count={props.count}
                     maxValue={props.maxValue}
                 />
                 <ButtonPanel
