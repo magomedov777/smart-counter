@@ -14,7 +14,6 @@ type CounterPropsType = {
     setMinValueHandler: (event: ChangeEvent<HTMLInputElement>) => void
     setMinValueButtonHandler: () => void
     setMaxValueHandler: (event: ChangeEvent<HTMLInputElement>) => void
-    setMaxValueButtonHandler: () => void
 }
 
 export const Counter = (props: CounterPropsType): JSX.Element => {
