@@ -19,7 +19,6 @@ const App: React.FC = () => {
         localStorage.setItem("counterValue", JSON.stringify(count))
       }, [count])
 
-    const incHandler = () => setCount(++count);
 
     const decHandler = () => setCount(--count);
 
